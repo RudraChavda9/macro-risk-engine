@@ -17,20 +17,27 @@ Asset Return = Alpha + Beta1 * (Delta 10Y Yield) + Beta2 * (Delta DXY) + Error
 Statistical Correction: Financial time-series parameters routinely manifest significant serial correlation and heteroskedasticity. To prevent invalid, artificially inflated t-statistics, this engine estimates parameters utilizing Newey-West HAC standard errors with a 5-lag truncation window to ensure structural estimation robustness.
 
 ---
-
 ## Core Visual Breakdowns and Observed Outcomes
 
 ### Figure 1: Security Characteristic Lines (SCL) via Multivariate OLS
 * Description: A multi-panel scatter plot mapping daily log asset returns against empirical macro differences. The calculated slope coefficients define the asset's macroeconomic sensitivity (Beta), while the Y-intercept isolates baseline daily momentum (Alpha).
 * Observed Outcome: Reveals a fundamental structural capital divergence. Long-duration government bonds (TLT) display a stark, highly sensitive negative slope (Beta1 = -0.1285), while Financials (XLF) exhibit an upward slope (Beta1 = +0.0041), capturing their opposing core reactions to yield curve steepening.
 
+![Figure 1: Security Characteristic Lines](security_characteristic_lines.png)
+
 ### Figure 2: Pure Macro Transmission Model (Beta-Only Shock)
 * Description: A systematic risk bar chart isolating raw, unhedged factor transmission by dropping Alpha intercepts (Alpha = 0) to evaluate how these asset classes react exclusively to underlying systemic shocks.
 * Observed Outcome: Long Bonds (TLT) absorb the primary impact of the structural tightening, rendering a critical -9.62% simulated contraction. This empirically validates Bloomberg Market Concepts (BMC) Duration Risk Theory. Because the asset holds extended fixed maturities, its long-horizon cash flows face steep discounting pressures under rising rates, creating a severe drag on aggregate capital.
 
+![Figure 2: Pure Macro Transmission Model](portfolio_stress_test_results.png)
+
 ### Figure 3: Fully Integrated Multi-Factor Model (Alpha and Beta Adjustments)
 * Description: An integrated portfolio bar chart combining the underlying, systemic macro vectors (Beta) with each corporate asset’s distinct daily operational drift (Alpha).
 * Observed Outcome: The expected total net portfolio drawdown is moderated to -3.79% due to a complete decoupling within the Technology Sector (XLK), whose rate sensitivity hovers near zero. Utilizing Capital Structure Theory, mega-cap tech constituents hold deep balance-sheet cash surpluses. This operational buffer transforms them into net interest earners rather than borrowers, isolating them from yield shocks and stabilizing portfolio downside.
+
+![Figure 3: Fully Integrated Multi-Factor Model](portfolio_stress_test_alpha_beta.png)
+
+
 
 ---
 
