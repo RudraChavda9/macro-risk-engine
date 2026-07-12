@@ -1,3 +1,5 @@
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RudraChavda9/macro-risk-engine/HEAD)
 Interactive Execution Guide for Recruiters
 To execute the econometric simulation engine live in a cloud environment without any local installation:
 1.Launch the Environment: Click the Launch Binder badge at the top of this repository homepage to initialize the dedicated JupyterLab workspace.
@@ -6,7 +8,6 @@ To execute the econometric simulation engine live in a cloud environment without
 "python src/risk_engine.py"
 4.Analyze the Results: The pipeline will immediately query the live Yahoo Finance API, calculate the multi-variable OLS regression matrices adjusting for serial correlation via Newey-West HAC errors, and display the systematic cross-asset factor allocations and final portfolio drawdowns directly on your screen.
 5.Inspect Data Outputs: To view the underlying analytical source files or generated documentation, double-click any file or directory in the left-hand sidebar asset browser.
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RudraChavda9/macro-risk-engine/HEAD)
 # Econometric Multi-Factor Stress-Testing and Cross-Asset Risk Transmission Engine
 
 An institutional-grade risk attribution and macro stress-testing pipeline engineered in Python. The engine applies multivariate ordinary least squares (OLS) estimations with robust Newey-West HAC adjustments to model return sensitivities across multi-asset portfolios under non-linear sovereign yield curve and currency liquidity shocks.
