@@ -1,4 +1,4 @@
-# Econometric Multi-Factor Stress-Testing and Cross-Asset Risk Transmission Engine
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/RudraChavda9/macro-risk-engine/HEAD)# Econometric Multi-Factor Stress-Testing and Cross-Asset Risk Transmission Engine
 
 An institutional-grade risk attribution and macro stress-testing pipeline engineered in Python. The engine applies multivariate ordinary least squares (OLS) estimations with robust Newey-West HAC adjustments to model return sensitivities across multi-asset portfolios under non-linear sovereign yield curve and currency liquidity shocks.
 
