@@ -21,7 +21,7 @@ def fetch_and_prepare_data():
     }
     
     # Fetch 3 years of daily trailing historical data
-    data = yf.download(list(tickers.values()), period="3y", interval="1d")['Adj Close']
+   data = yf.download(list(tickers.values()), period="3y", interval="1d", auto_adjust=False)['Adj Close']
     data = data.rename(columns={v: k for k, v in tickers.items()}).dropna()
     
     # Compute continuous log returns for assets to ensure structural variance scaling
