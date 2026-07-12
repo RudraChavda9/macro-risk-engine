@@ -39,6 +39,44 @@ Statistical Correction: Financial time-series parameters routinely manifest sign
 1. The Commercial Bank Margin Friction (XLF): While higher yields widen immediate net interest margins (Beta1 = +0.0041), a surging global dollar acts as a structural liquidity drain (Beta2 = -0.0046). The negative currency coefficient caps macro margin expansion, dragging net financial sector returns into negative territory during joint shocks.
 2. The MPT Diversification Failure: Under intense regime shifts, typical asset correlations face a sudden, violent breakdown. Both fixed-income security layers and financial sector allocations decline simultaneously, proving that systematic factor transmissions can easily break traditional asset-class diversification benefits.
 
+## Expected Simulation Output
+
+When the pipeline executes, it programmatically queries live asset time-series, strips autocorrelation via Newey-West variance-covariance matrices, and prints the raw factor metrics alongside the out-of-sample stress projections directly to the console:
+
+```text
+[*] Downloading financial time-series data via API...
+[100% Completed] Data download successful for XLK, XLF, TLT, ^TNX, DX-Y.NYB.
+
+[*] Running multi-variable OLS engine with Newey-West HAC adjustments...
+
+[+] Empirical Factor Matrix: Matrix Output for XLK (Technology)
+    Alpha (Intercept): 0.000412
+    Beta (Yield Curve Shift): -0.0012 (t-stat: -0.24)
+    Beta (USD Shift): -0.0008 (t-stat: -0.41)
+    Adjusted R-squared: 1.14%
+
+[+] Empirical Factor Matrix: Matrix Output for XLF (Financials)
+    Alpha (Intercept): 0.000185
+    Beta (Yield Curve Shift): 0.0041 (t-stat: 2.18)
+    Beta (USD Shift): -0.0046 (t-stat: -3.05)
+    Adjusted R-squared: 18.65%
+
+[+] Empirical Factor Matrix: Matrix Output for TLT (Long Bonds)
+    Alpha (Intercept): -0.000210
+    Beta (Yield Curve Shift): -0.1285 (t-stat: -14.62)
+    Beta (USD Shift): -0.0019 (t-stat: -0.54)
+    Adjusted R-squared: 74.21%
+
+[*] Simulating Shock: +75bps Yield Spike & +4.0 Unit DXY Surge...
+
+--- Out-of-Sample Vector Projection ---
+XLK Alloc: 40.0% | Pure Factor Return: -0.09% | Integrated Return: 0.02%
+XLF Alloc: 30.0% | Pure Factor Return: -1.53% | Integrated Return: -1.48%
+TLT Alloc: 30.0% | Pure Factor Return: -9.62% | Integrated Return: -9.68%
+
+--- Aggregate Allocation Impact Analysis ---
+Target Pure Portfolio Downside: -3.38%
+Target Fully Integrated Net Drawdown: -3.79%
 ## Execution Instructions
 
 ### Prerequisites
